@@ -282,9 +282,9 @@ with `dependsOn` we tell Flux to create the infrastructure items before deployin
 Fork this repository on your personal GitHub account and export your GitHub access token, username and repo name:
 
 ```sh
-export GITHUB_TOKEN=<your-token>
-export GITHUB_USER=<your-username>
-export GITHUB_REPO=<repository-name>
+export GITHUB_TOKEN=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
+export GITHUB_USER=sionsmith
+export GITHUB_REPO=gitops-demo
 ```
 
 Verify that your staging cluster satisfies the prerequisites with:
@@ -297,7 +297,7 @@ Set the kubectl context to your staging cluster and bootstrap Flux:
 
 ```sh
 flux bootstrap github \
-    --context=staging \
+    --context=minikube \
     --owner=${GITHUB_USER} \
     --repository=${GITHUB_REPO} \
     --branch=main \
@@ -336,7 +336,7 @@ Bootstrap Flux on production by setting the context and path to your production 
 
 ```sh
 flux bootstrap github \
-    --context=production \
+    --context=minikube \
     --owner=${GITHUB_USER} \
     --repository=${GITHUB_REPO} \
     --branch=main \
